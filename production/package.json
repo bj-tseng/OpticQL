@@ -10,7 +10,7 @@
     "build": "NODE_ENV=production webpack",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,12 @@
     "url": "https://github.com/patrick934/OpticQL/issues"
   },
   "homepage": "https://github.com/patrick934/OpticQL#readme",
+  "jest": {
+    "preset": "jest-puppeteer",
+    "setupFilesAfterEnv": [
+      "expect-puppeteer"
+    ]
+  },
   "dependencies": {
     "express": "^4.17.1",
     "express-graphql": "^0.11.0",
@@ -43,8 +49,11 @@
     "css-loader": "^4.2.2",
     "electron": "^10.1.0",
     "electron-builder": "^22.8.0",
+    "expect-puppeteer": "^4.4.0",
     "jest": "^26.4.2",
+    "jest-puppeteer": "^4.4.0",
     "nodemon": "^2.0.4",
+    "puppeteer": "^5.3.1",
     "style-loader": "^1.2.1",
     "supertest": "^4.0.2",
     "webpack": "^4.44.1",
